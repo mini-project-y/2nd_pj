@@ -1,0 +1,18 @@
+D:\Work\2nd_Project\2nd_pj>git push origin main
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (27/27), 194.09 MiB | 7.08 MiB/s, done.
+Total 27 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+remote: warning: File Yul/새 폴더.zip is 96.98 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB        
+remote: error: Trace: b61b1d351b07f9214a624b22e579e345004c199bf16675c1454f9e2fd6679bcb
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File Yul/새 폴더/BND_ADM_DONG_PG_dong/BND_ADM_DONG_PG.shp is 128.54 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/mini-project-y/2nd_pj.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/mini-project-y/2nd_pj.git'
+
+D:\Work\2nd_Project\2nd_pj>
