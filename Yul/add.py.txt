@@ -1,0 +1,41 @@
+import time
+import requests
+import pandas as pd
+
+# Kakao API Geocoding 함수
+def geocode_kakao(address, api_key):
+    """
+    Kakao Local API를 사용해 주소를 위도, 경도로 변환하는 함수
+    :param address: 도로명 주소
+    :param api_key: Kakao REST API Key
+    :return: (latitude, longitude) 좌표 튜플
+    """
+    url = ""
+    headers = {"Authorization": f"KakaoAK {api_key}"}
+    params = {"query": address}
+    
+    response = requests.get(url, headers=headers, params=params)
+    
+    if response.status_code == 200:
+        result = response.json()
+        if result['documents']:
+            x = float(result['documents'][0]['x'])  # 경도 (longitude)
+            y = float(result['documents'][0]['y'])  # 위도 (latitude)
+            return y, x
+        else:
+            return None, None  # 결과 없음
+    else:
+        print(f"Error {response.status_code}: {response.text}")
+        return None, None
+    
+address = "서울특별시 동대문구 정릉천동로 100"
+while True:
+    lat, lng = geocode_kakao(address, kakao_api_key)
+    if lat and lng:
+        break
+    else:
+        address = address.split(" ")
+        address = ' '.join(address[:-1])
+    
+
+lat, lng
